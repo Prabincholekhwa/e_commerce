@@ -15,9 +15,9 @@ export interface CustomerInterface extends ModelTimeStampExtend {
   full_name: string;
   email: string;
   password: string;
-  access_token: string | null;
   contact: string | null;
   address: string | null;
+  access_token: string | null;
 }
 
 export interface CustomerModelInterface

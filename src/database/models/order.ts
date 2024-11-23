@@ -23,11 +23,11 @@ const Order = sequelize.define<OrderModelInterface>(
       },
     },
     quantity: {
-      type: Sequelize.NUMBER,
+      type: Sequelize.INTEGER,
       allowNull: false,
     },
     total_price: {
-      type: Sequelize.NUMBER,
+      type: Sequelize.INTEGER,
       allowNull: false,
     },
     is_dispatched_status: {

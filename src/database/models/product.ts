@@ -15,7 +15,7 @@ const Product = sequelize.define<ProductModelInterface>('products', {
     allowNull: false,
   },
   price: {
-    type: Sequelize.NUMBER,
+    type: Sequelize.INTEGER,
     allowNull: false,
   },
   product_id: {
@@ -23,7 +23,7 @@ const Product = sequelize.define<ProductModelInterface>('products', {
     allowNull: false,
   },
   stock: {
-    type: Sequelize.NUMBER,
+    type: Sequelize.INTEGER,
     allowNull: false,
   },
   category: {

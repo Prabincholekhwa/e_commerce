@@ -3,6 +3,7 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import errorHandler from '../utils/errorHandler';
 import path from 'path';
+import routes from '../api';
 
 const buildExpressServer = (app: Express) => {
   app.use('/public', express.static(path.join(__dirname, '../../public')));
@@ -18,6 +19,10 @@ const buildExpressServer = (app: Express) => {
     })
   );
 
+  //API's
+  routes(app);
+
+  //handle error
   app.use(errorHandler());
 
   const PORT: string | number = process.env.PORT || 9000;

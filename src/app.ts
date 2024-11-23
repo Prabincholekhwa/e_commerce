@@ -9,6 +9,7 @@ async function main() {
     const app: Express = express();
     buildExpressServer(app);
     await database.connection();
+    await database.sequelize.sync({ alter: true });
   } catch (error: any) {
     console.log('err', error);
   }

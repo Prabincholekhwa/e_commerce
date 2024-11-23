@@ -21,7 +21,6 @@ const customerService = {
       const doesEmailExist = await customerRepository.findByEmail({ email });
       if (doesEmailExist) throw new Error('Email address already used');
       const hash = await Bcrypt.hash(password, 10);
-      console.log('rrr');
       const response = await customerRepository.insert({
         full_name,
         email,

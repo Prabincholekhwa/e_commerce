@@ -57,7 +57,6 @@ export const customerRepository = {
     InputCustomerInterface,
     'inserted' | 'updated' | 'accessToken'
   >): Promise<CustomerInterface> {
-    console.log('datas', data);
     return await Model.Customer.create({ ...data });
   },
 

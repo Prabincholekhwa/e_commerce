@@ -7,7 +7,7 @@ export interface InputAdminInterface {
   email: string;
   password: string;
   access_token: string | null;
-  role: Exclude<AdminRoleEnum, AdminRoleEnum.superAdmin>;
+  role: AdminRoleEnum;
 }
 
 export interface AdminInterface extends ModelTimeStampExtend {

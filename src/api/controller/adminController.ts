@@ -110,7 +110,6 @@ const adminController = {
     const { id } = req.admin!;
     try {
       await adminService.logout({ id });
-
       res
         .status(200)
         .json(formatResponseData(true, undefined, 'Logout success'));

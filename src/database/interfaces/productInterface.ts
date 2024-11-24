@@ -11,7 +11,6 @@ export interface InputProductInterface {
 }
 
 export interface ProductInterface extends ModelTimeStampExtend {
-  id: string;
   name: string;
   product_id: string;
   price: number;

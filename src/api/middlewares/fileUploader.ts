@@ -52,9 +52,7 @@ export const uploadFileMiddleware =
     });
   };
 
-export const deleteFile = (filename: string) => {
-  const filePath = path.join(fileDirectory, filename);
-
+export const deleteFile = (filePath: string) => {
   fs.unlink(filePath, (err) => {
     if (err) {
       console.error(`Error deleting file: ${filePath}`, err);

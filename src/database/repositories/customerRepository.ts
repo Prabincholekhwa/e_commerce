@@ -57,7 +57,12 @@ export const customerRepository = {
     InputCustomerInterface,
     'inserted' | 'updated' | 'accessToken'
   >): Promise<CustomerInterface> {
-    return await Model.Customer.create({ ...data });
+    try {
+      return await Model.Customer.create({ ...data });
+    } catch (error: any) {
+      error.level = 'Critical';
+      throw error;
+    }
   },
 
   async update({

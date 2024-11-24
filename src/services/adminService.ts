@@ -39,6 +39,7 @@ const adminService = {
         email,
         password: true,
       });
+      console.log('admin', admin);
       if (!admin) throw new Error('Invalid Email');
       const isValid = await Bcrypt.compare(password, admin.password);
       if (!isValid) throw new Error('Invalid Password');
@@ -126,7 +127,7 @@ const adminService = {
       });
 
       if (!admin || !admin.id || !admin.access_token)
-        throw new Error('Customer not found');
+        throw new Error('Admin not found');
 
       const response = await adminRepository.update({
         id: admin.id,

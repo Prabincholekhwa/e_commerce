@@ -19,7 +19,7 @@ const Order = sequelize.define<OrderModelInterface>(
       allowNull: false,
       references: {
         model: Product,
-        key: 'id',
+        key: 'product_id',
       },
     },
     quantity: {

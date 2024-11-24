@@ -69,7 +69,12 @@ export const adminRepository = {
     InputAdminInterface,
     'inserted' | 'updated' | 'accessToken'
   >): Promise<AdminInterface> {
-    return await Model.Admin.create({ ...data });
+    try {
+      return await Model.Admin.create({ ...data });
+    } catch (error: any) {
+      error.level = 'Critical';
+      throw error;
+    }
   },
 
   async update({

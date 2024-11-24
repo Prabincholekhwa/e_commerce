@@ -26,6 +26,19 @@ export const passwordSchema = (
       }
     );
 
+export const ISODateTimeString = (name: string) =>
+  z
+    .string()
+    .refine(
+      (value) =>
+        /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})?$/.test(
+          value
+        ),
+      {
+        message: `${name} must be a valid ISO date-time string.`,
+      }
+    );
+
 export const emailField = (val: string) =>
   z
     .string({
@@ -43,6 +56,20 @@ export const stringField = (val: string, min: number = 1, max?: number) =>
     })
     .min(min, { message: `${val} is too short` })
     .refine((data) => (max ? data.length <= max : true), `${val} is too long`);
+
+export const positiveNumberField = (val: string, min?: number, max?: number) =>
+  z
+    .number({
+      required_error: `${val} is required`,
+      invalid_type_error: 'Provide valid type',
+    })
+    .positive({ message: `${val} must be a positive number` })
+    .refine((data) => (min !== undefined ? data >= min : true), {
+      message: `${val} must be greater than or equal to ${min}`,
+    })
+    .refine((data) => (max !== undefined ? data <= max : true), {
+      message: `${val} must be less than or equal to ${max}`,
+    });
 
 export const Id = z.object({
   id: stringField('ID'),

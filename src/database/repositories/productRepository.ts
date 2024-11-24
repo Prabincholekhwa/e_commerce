@@ -46,16 +46,34 @@ export const productRepository = {
 
   async updateStock({
     product_id,
-    stockIncrementCount,
+    count,
+    isIncrement,
   }: {
     product_id: string;
-    stockIncrementCount: number;
+    count: number;
+    isIncrement: boolean;
   }) {
     try {
-      return await Model.Product.increment(
-        { stock: stockIncrementCount },
-        { where: { product_id } }
-      );
+      if (isIncrement) {
+        return await Model.Product.increment(
+          { stock: count },
+          { where: { product_id } }
+        );
+      } else {
+        return await Model.Product.decrement(
+          { stock: count },
+          { where: { product_id } }
+        );
+      }
+    } catch (error: any) {
+      error.level = 'Critical';
+      throw error;
+    }
+  },
+
+  async find() {
+    try {
+      return await Model.Product.findAndCountAll();
     } catch (error: any) {
       error.level = 'Critical';
       throw error;

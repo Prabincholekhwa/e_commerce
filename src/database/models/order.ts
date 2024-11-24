@@ -3,6 +3,7 @@ import { database } from '../config/connection';
 import { OrderModelInterface } from '../interfaces';
 import Product from './product';
 import Customer from './customer';
+import { PaymentStatusEnum } from '../../enums';
 
 const sequelize = database.sequelize;
 
@@ -30,10 +31,10 @@ const Order = sequelize.define<OrderModelInterface>(
       type: Sequelize.INTEGER,
       allowNull: false,
     },
-    is_dispatched_status: {
-      type: Sequelize.BOOLEAN,
+    payment_status: {
+      type: Sequelize.ENUM(...Object.values(PaymentStatusEnum)),
       allowNull: false,
-      defaultValue: false,
+      defaultValue: PaymentStatusEnum.notPaid,
     },
     customer_id: {
       type: Sequelize.STRING,
@@ -43,9 +44,14 @@ const Order = sequelize.define<OrderModelInterface>(
         key: 'id',
       },
     },
+    customer_name: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
     order_id: {
       type: Sequelize.STRING,
       allowNull: false,
+      unique: true,
     },
     order_date: {
       type: Sequelize.DATE,

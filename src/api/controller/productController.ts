@@ -17,9 +17,21 @@ export const productController = {
       const data = await processCsvFile(filePath);
       const response = await productService.addProduct(data);
       res
-        .status(200)
+        .status(201)
         .json(
           formatResponseData(true, response, 'Products Created  Successfully')
+        );
+    } catch (err) {
+      next(err);
+    }
+  },
+  async getAllProducts(req: Request, res: Response, next: NextFunction) {
+    try {
+      const response = await productService.getAllProducts();
+      res
+        .status(200)
+        .json(
+          formatResponseData(true, response, 'Products Fetched  Successfully')
         );
     } catch (err) {
       next(err);

@@ -4,3 +4,8 @@ export enum AdminRoleEnum {
   csr = 'csr',
   other = 'others',
 }
+
+export enum PaymentStatusEnum {
+  paid = 'paid',
+  notPaid = 'not-paid',
+}

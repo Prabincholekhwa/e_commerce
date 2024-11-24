@@ -63,12 +63,7 @@ export const adminRepository = {
     }
   },
 
-  async insert({
-    ...data
-  }: Omit<
-    InputAdminInterface,
-    'inserted' | 'updated' | 'accessToken'
-  >): Promise<AdminInterface> {
+  async insert({ ...data }: InputAdminInterface): Promise<AdminInterface> {
     try {
       return await Model.Admin.create({ ...data });
     } catch (error: any) {
@@ -80,10 +75,7 @@ export const adminRepository = {
   async update({
     id,
     ...data
-  }: Id &
-    Omit<Partial<InputAdminInterface>, 'id' | 'inserted' | 'updated'>): Promise<
-    [number]
-  > {
+  }: Id & Partial<InputAdminInterface>): Promise<[number]> {
     try {
       return await Model.Admin.update(data, { where: { id } });
     } catch (error: any) {

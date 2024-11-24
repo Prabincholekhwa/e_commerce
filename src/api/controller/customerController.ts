@@ -18,8 +18,6 @@ const customerController = {
       const { email, full_name, password, address, contact } = req.body;
       const userAgent = req.headers['user-agent']!;
 
-      console.log('I am her');
-
       await customerService.create({
         email,
         full_name,

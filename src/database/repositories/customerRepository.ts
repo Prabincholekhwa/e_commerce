@@ -53,10 +53,7 @@ export const customerRepository = {
 
   async insert({
     ...data
-  }: Omit<
-    InputCustomerInterface,
-    'inserted' | 'updated' | 'accessToken'
-  >): Promise<CustomerInterface> {
+  }: InputCustomerInterface): Promise<CustomerInterface> {
     try {
       return await Model.Customer.create({ ...data });
     } catch (error: any) {
@@ -68,11 +65,7 @@ export const customerRepository = {
   async update({
     id,
     ...data
-  }: Id &
-    Omit<
-      Partial<InputCustomerInterface>,
-      'id' | 'inserted' | 'updated'
-    >): Promise<[number]> {
+  }: Id & Partial<InputCustomerInterface>): Promise<[number]> {
     try {
       return await Model.Customer.update(data, { where: { id } });
     } catch (error: any) {

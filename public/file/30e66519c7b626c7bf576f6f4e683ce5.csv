@@ -1,0 +1,11 @@
+product_id,name,price,stock,description,category
+P0010,Smartphone,299,70,A modern smartphone with 64GB storage and 4GB RAM,Electronics
+P0011,Wireless Earbuds,99,80,Bluetooth-enabled earbuds with noise cancellation,Accessories
+P0012,Running Shoes,89,78,Comfortable running shoes for all terrains,Sports
+P0013,Laptop,499,122,15-inch laptop with Intel i7 processor and 16GB RAM,Electronics
+P0014,Office Chair,69,132,Ergonomic office chair with adjustable height and lumbar support,Furniture
+P0015,20W Charger,30,212,Super Fast Charger,Accessories
+P0016,Table,40,343,Office Table,Furniture
+P0017,Monitor,80,23,Monitor,Electronics
+P0018,Shirt,40,123,Shirt,Accessories
+P0019,Pant,80,456,Pant,Accessories

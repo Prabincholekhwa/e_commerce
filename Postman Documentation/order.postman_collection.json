@@ -1,0 +1,190 @@
+{
+	"info": {
+		"_postman_id": "ea06f0a8-aa87-4cdf-b8e2-308fc22f0877",
+		"name": "order",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28573523",
+		"_collection_link": "https://gurji-task-assesment.postman.co/workspace/4e7e5388-7198-4499-ad99-2074c03a8071/collection/28573523-ea06f0a8-aa87-4cdf-b8e2-308fc22f0877?action=share&source=collection_link&creator=28573523"
+	},
+	"item": [
+		{
+			"name": "Create Order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU3MDU5NjUzOWYxYzdkMDYiLCJlbWFpbCI6ImFiY2RzQGdtYWlsLmNvbSIsInVzZXJBZ2VudCI6IlBvc3RtYW5SdW50aW1lLzcuNDIuMCIsImlzcyI6ImVfY29tbWVyY2UiLCJpYXQiOjE3MzI0NzE4Nzd9.raoAbzNWRivfXqtS4QuZCiSO3is4lCwTfIE9eUzNtQ0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"product_id\":\"P0011\",\n    \"quantity\": 30\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4001/orders",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "My Orders(Customers) filter works(req.query are optional)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwZGZkYjlkMGYxNmJiMDIiLCJlbWFpbCI6InByYWJpbmNob2xleEBnbWFpbC5jb20iLCJ1c2VyQWdlbnQiOiJQb3N0bWFuUnVudGltZS83LjQyLjAiLCJpc3MiOiJlX2NvbW1lcmNlIiwiaWF0IjoxNzMyNDYyOTEyfQ.-0AJPD1e5V67KK_BXtcPwxXVJjQh3ijyfLWwEoyC_4I",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:4001/orders/my-orders?payment_status=not-paid&product_id=ad6787as8d&from_date_time=2024-11-23T00:00:00Z&to_date_time=2024-11-24T00:00:00Z",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"orders",
+						"my-orders"
+					],
+					"query": [
+						{
+							"key": "payment_status",
+							"value": "not-paid"
+						},
+						{
+							"key": "product_id",
+							"value": "ad6787as8d"
+						},
+						{
+							"key": "from_date_time",
+							"value": "2024-11-23T00:00:00Z"
+						},
+						{
+							"key": "to_date_time",
+							"value": "2024-11-24T00:00:00Z"
+						}
+					]
+				},
+				"description": "Here my-orders?payment_status=not-paid&product_id=ad6787as8d&from_date_time=2024-11-23T00:00:00Z&to_date_time=2024-11-24T00:00:00Z are optional\n\nreq.query are optional"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Order(Admin) filter works(req.query are optional)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZjOTkwNDc5NGY1NmU1MWUiLCJlbWFpbCI6ImNvbnRhY3QuY29kZXhjaG9sZXhAZ21haWwuY29tIiwidXNlckFnZW50IjoiUG9zdG1hblJ1bnRpbWUvNy40Mi4wIiwicm9sZSI6InN1cGVyLWFkbWluIiwiaXNzIjoiZV9jb21tZXJjZSIsImlhdCI6MTczMjQ2NDY3MX0.pWNl8Pd7e3FzxxNvsVj-sZo79wP38iOO5ypqx0-YLAc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:4001/orders",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"orders"
+					]
+				},
+				"description": "Here my-orders?payment_status=not-paid&product_id=ad6787as8d&from_date_time=2024-11-23T00:00:00Z&to_date_time=2024-11-24T00:00:00Z&customer_id=oiu2342 are optional\n\nreq.query are optional"
+			},
+			"response": []
+		},
+		{
+			"name": "Pay Order",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU3MDU5NjUzOWYxYzdkMDYiLCJlbWFpbCI6ImFiY2RzQGdtYWlsLmNvbSIsInVzZXJBZ2VudCI6IlBvc3RtYW5SdW50aW1lLzcuNDIuMCIsImlzcyI6ImVfY29tbWVyY2UiLCJpYXQiOjE3MzI0NzE4Nzd9.raoAbzNWRivfXqtS4QuZCiSO3is4lCwTfIE9eUzNtQ0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:4001/orders/pay/d0977c",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"orders",
+						"pay",
+						"d0977c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Order By OrderId(For Customer)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwZGZkYjlkMGYxNmJiMDIiLCJlbWFpbCI6InByYWJpbmNob2xleEBnbWFpbC5jb20iLCJ1c2VyQWdlbnQiOiJQb3N0bWFuUnVudGltZS83LjQyLjAiLCJpc3MiOiJlX2NvbW1lcmNlIiwiaWF0IjoxNzMyNDYyOTEyfQ.-0AJPD1e5V67KK_BXtcPwxXVJjQh3ijyfLWwEoyC_4I",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:4001/orders/5c1786",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"orders",
+						"5c1786"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Order By OrderId(For admin)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZjOTkwNDc5NGY1NmU1MWUiLCJlbWFpbCI6ImNvbnRhY3QuY29kZXhjaG9sZXhAZ21haWwuY29tIiwidXNlckFnZW50IjoiUG9zdG1hblJ1bnRpbWUvNy40Mi4wIiwicm9sZSI6InN1cGVyLWFkbWluIiwiaXNzIjoiZV9jb21tZXJjZSIsImlhdCI6MTczMjQ2NDY3MX0.pWNl8Pd7e3FzxxNvsVj-sZo79wP38iOO5ypqx0-YLAc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:4001/orders/admin/5c1786",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"orders",
+						"admin",
+						"5c1786"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

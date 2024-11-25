@@ -1,0 +1,63 @@
+{
+	"info": {
+		"_postman_id": "8fb14a71-cee5-4c85-a216-9547bee86391",
+		"name": "Product",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28573523",
+		"_collection_link": "https://gurji-task-assesment.postman.co/workspace/4e7e5388-7198-4499-ad99-2074c03a8071/collection/28573523-8fb14a71-cee5-4c85-a216-9547bee86391?action=share&source=collection_link&creator=28573523"
+	},
+	"item": [
+		{
+			"name": "Upload Product(CSV)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZjOTkwNDc5NGY1NmU1MWUiLCJlbWFpbCI6ImNvbnRhY3QuY29kZXhjaG9sZXhAZ21haWwuY29tIiwidXNlckFnZW50IjoiUG9zdG1hblJ1bnRpbWUvNy40Mi4wIiwicm9sZSI6InN1cGVyLWFkbWluIiwiaXNzIjoiZV9jb21tZXJjZSIsImlhdCI6MTczMjQ1OTk1Nn0.6RDtm7_B_roGD6lwLep02HW359vv3or6MOXc7vAvQTA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "csv",
+							"type": "file",
+							"src": "/home/chillx/Downloads/username.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:4001/products",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Products(Public Route)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4001/products",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

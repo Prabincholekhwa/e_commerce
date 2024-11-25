@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/app.js",
-    "dev": "nodemon src/app.ts",
+    "start": "npx sequelize db:seed:all && node dist/app.js",
+    "dev": "npx sequelize db:seed:all && nodemon src/app.ts",
     "build": "tsc --build tsconfig.json"
   },
   "keywords": [],

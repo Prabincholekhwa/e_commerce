@@ -1,0 +1,248 @@
+{
+	"info": {
+		"_postman_id": "4510888d-6caa-46f1-8d9b-751dfa5d024c",
+		"name": "Admin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28573523",
+		"_collection_link": "https://gurji-task-assesment.postman.co/workspace/4e7e5388-7198-4499-ad99-2074c03a8071/collection/28573523-4510888d-6caa-46f1-8d9b-751dfa5d024c?action=share&source=collection_link&creator=28573523"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"contact.codexcholex@gmail.com\",\"password\":\"Super@123\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4001/admins/login",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"admins",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Admins (Allowed to SuperAdmin only)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZjOTkwNDc5NGY1NmU1MWUiLCJlbWFpbCI6ImNvbnRhY3QuY29kZXhjaG9sZXhAZ21haWwuY29tIiwidXNlckFnZW50IjoiUG9zdG1hblJ1bnRpbWUvNy40Mi4wIiwicm9sZSI6InN1cGVyLWFkbWluIiwiaXNzIjoiZV9jb21tZXJjZSIsImlhdCI6MTczMjQzNTUxMH0.39pPx0v-1UHoFnw-7saDAxgrPGDxeDl0Ha5lXEzsHyY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"full_name\":\"CTO\",\n  \"email\": \"cto@gmail.com\",\n  \"password\":\"Cto@1234\",\n  \"role\":\"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4001/admins",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"admins"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZjOTkwNDc5NGY1NmU1MWUiLCJlbWFpbCI6ImNvbnRhY3QuY29kZXhjaG9sZXhAZ21haWwuY29tIiwidXNlckFnZW50IjoiUG9zdG1hblJ1bnRpbWUvNy40Mi4wIiwicm9sZSI6InN1cGVyLWFkbWluIiwiaXNzIjoiZV9jb21tZXJjZSIsImlhdCI6MTczMjQzNTUxMH0.39pPx0v-1UHoFnw-7saDAxgrPGDxeDl0Ha5lXEzsHyY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"full_name\":\"Prabin Super Admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4001/admins",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"admins"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Own Profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZjOTkwNDc5NGY1NmU1MWUiLCJlbWFpbCI6ImNvbnRhY3QuY29kZXhjaG9sZXhAZ21haWwuY29tIiwidXNlckFnZW50IjoiUG9zdG1hblJ1bnRpbWUvNy40Mi4wIiwicm9sZSI6InN1cGVyLWFkbWluIiwiaXNzIjoiZV9jb21tZXJjZSIsImlhdCI6MTczMjQzNTUxMH0.39pPx0v-1UHoFnw-7saDAxgrPGDxeDl0Ha5lXEzsHyY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:4001/admins/profile",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"admins",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Password (Allowed to all admins)",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZjOTkwNDc5NGY1NmU1MWUiLCJlbWFpbCI6ImNvbnRhY3QuY29kZXhjaG9sZXhAZ21haWwuY29tIiwidXNlckFnZW50IjoiUG9zdG1hblJ1bnRpbWUvNy40Mi4wIiwicm9sZSI6InN1cGVyLWFkbWluIiwiaXNzIjoiZV9jb21tZXJjZSIsImlhdCI6MTczMjQzNTUxMH0.39pPx0v-1UHoFnw-7saDAxgrPGDxeDl0Ha5lXEzsHyY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"oldPassword\":\"Super@1234\",\n  \"newPassword\":\"Super@123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4001/admins/change-password",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"admins",
+						"change-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Password By Super Admin(Admin makes change password for other admins)",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZjOTkwNDc5NGY1NmU1MWUiLCJlbWFpbCI6ImNvbnRhY3QuY29kZXhjaG9sZXhAZ21haWwuY29tIiwidXNlckFnZW50IjoiUG9zdG1hblJ1bnRpbWUvNy40Mi4wIiwicm9sZSI6InN1cGVyLWFkbWluIiwiaXNzIjoiZV9jb21tZXJjZSIsImlhdCI6MTczMjQzNTUxMH0.39pPx0v-1UHoFnw-7saDAxgrPGDxeDl0Ha5lXEzsHyY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"newPassword\":\"Abcd@123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4001/admins/change-password-by-admin/444dc7abfffa5ae5",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"admins",
+						"change-password-by-admin",
+						"444dc7abfffa5ae5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZjOTkwNDc5NGY1NmU1MWUiLCJlbWFpbCI6ImNvbnRhY3QuY29kZXhjaG9sZXhAZ21haWwuY29tIiwidXNlckFnZW50IjoiUG9zdG1hblJ1bnRpbWUvNy40Mi4wIiwicm9sZSI6InN1cGVyLWFkbWluIiwiaXNzIjoiZV9jb21tZXJjZSIsImlhdCI6MTczMjQzNjIwOX0.q3NfkAT8PbYnu9zQ1BDk-uTTzBpE2Y59szWruJyXGxk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:4001/admins/logout",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"admins",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Admins(Allowed to super admin only)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZjOTkwNDc5NGY1NmU1MWUiLCJlbWFpbCI6ImNvbnRhY3QuY29kZXhjaG9sZXhAZ21haWwuY29tIiwidXNlckFnZW50IjoiUG9zdG1hblJ1bnRpbWUvNy40Mi4wIiwicm9sZSI6InN1cGVyLWFkbWluIiwiaXNzIjoiZV9jb21tZXJjZSIsImlhdCI6MTczMjQzNjI4NH0.YiZNiJW2DWAS4HVPCKQwanvB9r8T09D8N3yOjqq95kA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:4001/admins",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"admins"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

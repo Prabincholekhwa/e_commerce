@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "5ba6c892-e7d7-4600-853f-e7c6602e3dcf",
+		"name": "Customer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28573523",
+		"_collection_link": "https://gurji-task-assesment.postman.co/workspace/4e7e5388-7198-4499-ad99-2074c03a8071/collection/28573523-5ba6c892-e7d7-4600-853f-e7c6602e3dcf?action=share&source=collection_link&creator=28573523"
+	},
+	"item": [
+		{
+			"name": "SignUp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"full_name\":\"Rabin Khadka\",\n  \"email\":\"abcds@gmail.com\",\n  \"password\":\"Prabin@123\",\n  \"address\":\"kathmandiu\",\n  \"contact\":\"9876541243\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4001/customers/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"customers",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\":\"prabincholex@gmail.com\",\n  \"password\":\"Prabin@123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4001/customers/login",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"customers",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Password",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRiZjcwMGYzN2I1YzcxNmEiLCJlbWFpbCI6InByYWJpbmNob2xleEBnbWFpbC5jb20iLCJ1c2VyQWdlbnQiOiJQb3N0bWFuUnVudGltZS83LjQyLjAiLCJpc3MiOiJlX2NvbW1lcmNlIiwiaWF0IjoxNzMyNDM2MzkxfQ.jcvZWrtLdXEUTbjFUF8Q6W7i73tp8P08b91Zr3FGVqY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"oldPassword\":\"Prabin@1234\",\n  \"newPassword\":\"Prabin@123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4001/customers/change-password",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"customers",
+						"change-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Own Profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRiZjcwMGYzN2I1YzcxNmEiLCJlbWFpbCI6InByYWJpbmNob2xleEBnbWFpbC5jb20iLCJ1c2VyQWdlbnQiOiJQb3N0bWFuUnVudGltZS83LjQyLjAiLCJpc3MiOiJlX2NvbW1lcmNlIiwiaWF0IjoxNzMyNDM2MzkxfQ.jcvZWrtLdXEUTbjFUF8Q6W7i73tp8P08b91Zr3FGVqY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:4001/customers/profile",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"customers",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRiZjcwMGYzN2I1YzcxNmEiLCJlbWFpbCI6InByYWJpbmNob2xleEBnbWFpbC5jb20iLCJ1c2VyQWdlbnQiOiJQb3N0bWFuUnVudGltZS83LjQyLjAiLCJpc3MiOiJlX2NvbW1lcmNlIiwiaWF0IjoxNzMyNDM2MzkxfQ.jcvZWrtLdXEUTbjFUF8Q6W7i73tp8P08b91Zr3FGVqY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"full_name\":\"Rabin Cholekhwa\", \"address\":\"kathmandu\", \"contact\":\"9865438796\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4001/customers",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRiZjcwMGYzN2I1YzcxNmEiLCJlbWFpbCI6InByYWJpbmNob2xleEBnbWFpbC5jb20iLCJ1c2VyQWdlbnQiOiJQb3N0bWFuUnVudGltZS83LjQyLjAiLCJpc3MiOiJlX2NvbW1lcmNlIiwiaWF0IjoxNzMyNDM2MzkxfQ.jcvZWrtLdXEUTbjFUF8Q6W7i73tp8P08b91Zr3FGVqY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:4001/customers/logout",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"customers",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
